@@ -10,6 +10,7 @@ function App() {
   const accessToken = localStorage.getItem("accessToken");
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route
           path="/"
