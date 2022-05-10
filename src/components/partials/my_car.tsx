@@ -1,7 +1,7 @@
 import React from "react";
 
-const Car = ({
-  car: { imageUrl, make, model, color, yearOfManufacture, price, condition }
+const MyCar = ({
+  car: { imageUrl, make, model, color, yearOfManufacture, price, condition }, page
 }: any) => {
   return (
     <div className="group relative">
@@ -29,4 +29,4 @@ const Car = ({
   );
 };
 
-export default Car;
+export default MyCar;

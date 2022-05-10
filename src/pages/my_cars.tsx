@@ -3,14 +3,14 @@ import { CarService } from "../services/cars";
 import Car from "../components/partials/car";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const MyCars = () => {
   const [cars, setCars]: any = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getCars = async () => {
       try {
-        const response = await CarService.getAllCars();
+        const response = await CarService.getMyCars();
 
         if (response) {
           console.log("response", response);
@@ -27,10 +27,10 @@ const Home = () => {
     <div className="w-3/4 py-20 mx-auto">
       <div className="flex justify-between items-center">
         <h1 className="text-green-900 font-bold text-2xl">
-          Latest Cars For Sale
+          My Car Adverts
         </h1>
         <button className="py-2 px-4 rounded-lg font-semibold cursor-pointer text-white w-1/6 bg-green-900">
-          Sell Car
+          Post New Car
         </button>
       </div>
       {loading && (
@@ -43,7 +43,7 @@ const Home = () => {
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {cars.map((car: any) => (
             <Link key={car?._id} to={`/car/details/${car._id}`}>
-              <Car car={car} />
+              <Car car={car} page="my_car" />
             </Link>
           ))}
         </div>
@@ -52,4 +52,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MyCars;
