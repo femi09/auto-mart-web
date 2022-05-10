@@ -75,4 +75,17 @@ export class CarService {
 
     return data;
   }
+
+  static async deleteCar(id: string | undefined) {
+    const accessToken = localStorage.getItem("accessToken");
+
+    const { data } = await axios.delete(`${baseUrl}/${id}`, {
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    return data;
+  }
 }

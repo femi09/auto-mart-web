@@ -7,6 +7,7 @@ import Home from "./pages/home";
 import Header from "./components/common/header";
 import CarDetailsPage from "./pages/car-details";
 import MyCars from "./pages/my_cars";
+import DeleteCar from './pages/deleteCar';
 
 function App() {
   const accessToken = localStorage.getItem("accessToken");
@@ -22,6 +23,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/car/details/:id" element={<CarDetailsPage />} />
         <Route path="/my_cars" element={<MyCars />} />
+        <Route path="/delete_car/:id" element={<DeleteCar/>} />
       </Routes>
     </div>
   );
