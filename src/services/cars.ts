@@ -50,5 +50,29 @@ export class CarService {
     return data;
   }
 
-  static async getCar(id: string) {}
+  static async getMyCars(): Promise<any> {
+    const accessToken = localStorage.getItem("accessToken");
+
+    const { data } = await axios.get(`${baseUrl}/my_cars`, {
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    return data;
+  }
+
+  static async getCar(id: string | undefined) {
+    const accessToken = localStorage.getItem("accessToken");
+
+    const { data } = await axios.get(`${baseUrl}/${id}`, {
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    return data;
+  }
 }
