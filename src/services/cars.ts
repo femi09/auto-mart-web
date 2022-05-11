@@ -36,7 +36,7 @@ export type CarDataResponse = {
   condition: string;
 };
 
-const baseUrl = "http://localhost:5000/api/v1/cars";
+const baseUrl = `https://api-auto-mart.herokuapp.com/api/v1/cars`;
 
 export class CarService {
   static async postCar(payload: PostCarData) {

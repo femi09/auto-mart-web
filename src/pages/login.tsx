@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import InputField from "../components/common/input-field";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -34,12 +34,13 @@ const Login = () => {
 
         if (response && response.accessToken) {
           setLoading(false);
+          navigate("/");
           localStorage.setItem("accessToken", response.accessToken);
           localStorage.setItem("firstname", response.firstname);
           console.log("response", response);
           toast.success("login successful!");
+          
           setLoading(false);
-          navigate("/");
         }
       } catch (error: any) {
         setLoading(false);
