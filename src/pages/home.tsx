@@ -29,10 +29,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="sm:w-3/4 py-20 mx-6 sm:mx-auto">
+    <div className="sm:w-3/4 py-8 sm:py-20 mx-4 sm:mx-auto">
       <div className="flex mb-8 sm:mb-12 justify-between items-center">
         <h1 className="text-green-500 font-bold">
-          <span className="text-gray-900 font-bold mx-1">WELCOME </span>
+          <span className="text-gray-900 font-bold text-sm mx-1">WELCOME </span>
           {localStorage.getItem("firstname")
             ? localStorage.getItem("firstname")?.toUpperCase()
             : "COMRADE"}
@@ -58,7 +58,7 @@ const Home = () => {
           Fetching Cars Available for Sale...
         </div>
       ) : (
-        <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div className="max-w-2xl mx-auto py-8 sm:py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {cars.map((car: any) => (
               <Link key={car?._id} to={`/car/details/${car._id}`}>

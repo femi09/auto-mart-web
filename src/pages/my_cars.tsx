@@ -30,7 +30,7 @@ const MyCars = () => {
         <h1 className="text-green-900 font-bold text-lg sm:text-2xl">My Car Adverts</h1>
         <button
           onClick={() => navigate("/post_car")}
-          className="py-2 sm:px-4 px-2 text-xs sm:text-base rounded-lg font-semibold cursor-pointer text-white sm:w-1/6 bg-green-900"
+          className="py-4 sm:px-4 px-4 text-sm sm:text-base rounded-lg font-semibold cursor-pointer text-white sm:w-1/6 bg-green-900"
         >
           Post New Car
         </button>
