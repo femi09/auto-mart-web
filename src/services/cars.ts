@@ -1,16 +1,14 @@
 import axios from "axios";
 
 export type PostCarData = {
-  _id?: string;
   make: string;
   model: string;
   description: string;
   price: number;
   location: string;
   yearOfManufacture: string;
-  seller: string;
   color: string;
-  imageUrl: string;
+  imageUrl: File | null;
   engineSize: string;
   condition: string;
 };
@@ -23,7 +21,13 @@ export type CarDataResponse = {
   price: number;
   location: string;
   yearOfManufacture: string;
-  seller: string;
+  seller: {
+    _id: string;
+    firstname: string;
+    lastname: string;
+    phoneNumber: string;
+    email: string;
+  };
   color: string;
   imageUrl: string;
   engineSize: string;
@@ -35,7 +39,18 @@ export type CarDataResponse = {
 const baseUrl = "http://localhost:5000/api/v1/cars";
 
 export class CarService {
-  static async postCar(payload: PostCarData) {}
+  static async postCar(payload: PostCarData) {
+    const accessToken = localStorage.getItem("accessToken");
+
+    const { data } = await axios.post(`${baseUrl}/post_advert`, payload, {
+      headers: {
+        "content-type": "multipart/form-data",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    return data;
+  }
 
   static async getAllCars(): Promise<any> {
     const accessToken = localStorage.getItem("accessToken");

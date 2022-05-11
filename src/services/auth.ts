@@ -18,6 +18,7 @@ type authResponse = {
   email: string;
   accessToken: string;
   id: string;
+  firstname: string;
 };
 
 const baseUrl = "http://localhost:5000/api/v1/auth";
