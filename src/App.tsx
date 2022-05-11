@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Login from "./pages/login";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -18,13 +18,17 @@ function App() {
     localStorage.getItem("accessToken")
   );
 
+  useEffect(() => {
+    setAccessToken(localStorage.getItem("accessToken"));
+  }, []);
+
   const location = useLocation();
 
   const headerless = ["/login", "/register"];
 
   return (
     <div className="App">
-      <ToastContainer/>
+      <ToastContainer />
       {!headerless.includes(location.pathname) && <Header />}
       <Routes>
         <Route
