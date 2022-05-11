@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { CarService } from "../services/cars";
+import { toast } from "react-toastify";
 
 const DeleteCar = () => {
   const { id } = useParams();
@@ -12,7 +13,7 @@ const DeleteCar = () => {
 
       console.log("res", res);
       if (res) {
-        alert(res.msg);
+        toast.success(res.msg)
         navigate("/my_cars");
       }
     } catch (error) {}

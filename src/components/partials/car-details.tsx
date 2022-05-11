@@ -22,7 +22,7 @@ const CarDetails = ({ car }: any) => {
 
             <div>
               <p className="text-green-900 font-bold">Model</p>
-              <p>{car.model}</p>
+              <p className="text-right">{car.model}</p>
             </div>
           </div>
           <div className="flex justify-between items-center">
@@ -33,7 +33,7 @@ const CarDetails = ({ car }: any) => {
 
             <div>
               <p className="text-green-900 font-bold">color</p>
-              <p>{car.color}</p>
+              <p className="text-right">{car.color}</p>
             </div>
           </div>
           <div className="flex justify-between items-center">
@@ -42,20 +42,15 @@ const CarDetails = ({ car }: any) => {
               <p>{car.yearOfManufacture}</p>
             </div>
 
-            <div className="">
-              <p className="text-green-900 font-bold">price</p>
-              <p>{car.price}</p>
+            <div>
+              <p className="text-green-900 font-bold">engine size</p>
+              <p className="text-right">{car.engineSize}hp</p>
             </div>
           </div>
           <div className="flex justify-between items-center">
             <div className="py-4">
               <p className="text-green-900 font-bold">location</p>
               <p>{car.location}</p>
-            </div>
-
-            <div>
-              <p className="text-green-900 font-bold">engine size</p>
-              <p>{car.engineSize}</p>
             </div>
           </div>
         </div>
