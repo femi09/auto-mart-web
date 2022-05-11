@@ -151,7 +151,7 @@ const Register = () => {
           </div>
           <p className="w-full text-gray-900 text-center">
             Already have an account with us?{" "}
-            <Link to="/">
+            <Link to="/login">
               <span className="text-green-900 font-bold">login</span>
             </Link>
           </p>

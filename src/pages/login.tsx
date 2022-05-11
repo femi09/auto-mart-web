@@ -54,7 +54,7 @@ const Login = () => {
       <h1 className="text-4xl w-1/2 text-center my-8 mx-auto text-green-900">
         Login
       </h1>
-      <div className="grid place-items-center grid place-items-center sm:w-2/3 xl:w-1/2 bg-gray-100 bg-opacity-50 text-green-900 rounded-lg py-20 my-20 sm:mx-auto">
+      <div className="grid place-items-center grid place-items-center sm:w-2/3 2xl:w-1/2 bg-gray-100 bg-opacity-50 text-green-900 rounded-lg py-20 my-20 sm:mx-auto">
         <form
           onSubmit={formik.handleSubmit}
           className="px-4 sm:px-0 sm:w-2/3 xl:w-1/2"
