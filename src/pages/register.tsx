@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import InputField from "../components/common/input-field";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link, useNavigate, NavigateFunction } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthService } from "../services/auth";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const navigate: NavigateFunction = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
@@ -53,7 +52,7 @@ const Register = () => {
           localStorage.setItem("accessToken", response.accessToken);
           localStorage.setItem("firstname", response.firstname);
           toast.success("account creation successful!!");
-          navigate("/");
+          window.location.replace("/")
         }
       } catch (error: any) {
         console.log(error);

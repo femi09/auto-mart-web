@@ -2,13 +2,12 @@ import { useState } from "react";
 import InputField from "../components/common/input-field";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link, NavigateFunction, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthService } from "../services/auth";
 import { toast } from "react-toastify";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
-  const navigate: NavigateFunction = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -32,14 +31,15 @@ const Login = () => {
         setLoading(true);
         const response = await AuthService.login(loginData);
 
-        if (response && response.accessToken) {
+        if (response.accessToken) {
+
           setLoading(false);
-          navigate("/");
           localStorage.setItem("accessToken", response.accessToken);
           localStorage.setItem("firstname", response.firstname);
           console.log("response", response);
           toast.success("login successful!");
-          
+          window.location.replace("/")
+
           setLoading(false);
         }
       } catch (error: any) {
