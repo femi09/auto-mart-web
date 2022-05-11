@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Login from "./pages/login";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -10,7 +10,7 @@ import MyCars from "./pages/my_cars";
 import DeleteCar from "./pages/deleteCar";
 import PostCar from "./pages/post-car";
 import ProtectedRoute from "./components/hoc/protected-route";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {

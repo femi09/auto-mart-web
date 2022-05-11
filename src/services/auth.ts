@@ -21,7 +21,7 @@ type authResponse = {
   firstname: string;
 };
 
-const baseUrl = "http://localhost:5000/api/v1/auth";
+const baseUrl = `https://api-auto-mart.herokuapp.com/api/v1/auth`;
 
 export class AuthService {
   static async login(payload: LoginData): Promise<authResponse> {
