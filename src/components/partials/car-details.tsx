@@ -2,8 +2,8 @@ import React from "react";
 
 const CarDetails = ({ car }: any) => {
   return (
-    <div className="bg-white px-20 my-20 flex justify-between">
-      <div className="w-1/2">
+    <div className="bg-white px-2 lg:px-20 my-20 flex flex-col sm:flex-row justify-between">
+      <div className="sm:w-1/2">
         <div className="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-1/2 lg:aspect-none">
           <img
             src={car.imageUrl}
@@ -55,7 +55,7 @@ const CarDetails = ({ car }: any) => {
           </div>
         </div>
       </div>
-      <div className="shadow-lg rounded-md w-1/2 ml-12 h-1/2 py-12 px-8">
+      <div className="shadow-lg rounded-md lg:w-1/2 lg:ml-12 sm:h-1/2 py-12 px-8">
         <h1 className="text-4xl font-bold text-gray-900">
           {car.make} {car.model} {car.yearOfManufacture} {car.color}
         </h1>
@@ -84,7 +84,7 @@ const CarDetails = ({ car }: any) => {
 
           <div className="px-2 my-4">
             <h1 className="text-green-900 font-bold text-xl ">Email</h1>
-            <p className="font-bold text-lg text-gray-900">
+            <p className="font-bold text-sm sm:text-lg text-gray-900">
               {car.seller?.email}
             </p>
           </div>

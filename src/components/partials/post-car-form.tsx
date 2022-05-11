@@ -79,7 +79,7 @@ const PostCarForm = () => {
 
   return (
     <div>
-      <div className="grid place-items-center sm:w-2/3 xl:w-1/2 bg-gray-100 bg-opacity-50 text-green-900 rounded-lg py-20 my-20 sm:mx-auto">
+      <div className="grid place-items-center sm:w-2/3 xl:w-1/2 bg-gray-100 bg-opacity-50 text-green-900 rounded-lg py-20 my-6 mx-2 sm:my-20 sm:mx-auto">
         <form
           onSubmit={handleSubmit}
           className="px-4 sm:px-0 sm:w-2/3"
@@ -147,8 +147,8 @@ const PostCarForm = () => {
             ></textarea>
           </div>
 
-          <div className="flex">
-            <div className="w-1/2">
+          <div className="flex flex-col lg:flex-row lg:items-center">
+            <div className="w-full mb-4 lg:my-0 lg:w-1/2">
               <InputField
                 name="yearOfManufacture"
                 placeholder="0.00"
@@ -159,7 +159,7 @@ const PostCarForm = () => {
               />
             </div>
 
-            <div className="w-1/2 ml-4">
+            <div className="w-full lg:w-1/2 lg:ml-4">
               <InputField
                 name="engineSize"
                 placeholder="engine size in horse power"
